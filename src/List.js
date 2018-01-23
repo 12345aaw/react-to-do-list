@@ -1,11 +1,13 @@
 import React from 'react';
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+import '../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 
 const List = props => (
-    <ul>
-        {
-            props.items.map((item, index) => <li key={index}>{item}</li>)
-        }
-    </ul>
+    <BootstrapTable data = {props.items}>
+        <TableHeaderColumn dataField='index' isKey>ID</TableHeaderColumn>
+        <TableHeaderColumn dataField='item'>hello</TableHeaderColumn>
+    </BootstrapTable>
+
 );
 
 export default List;
