@@ -5,7 +5,7 @@ import '../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min
 const List = props => (
     <BootstrapTable data = {props.items}>
         <TableHeaderColumn dataField='index' isKey>ID</TableHeaderColumn>
-        <TableHeaderColumn dataField='item'>hello</TableHeaderColumn>
+        <TableHeaderColumn dataField='item'>Item</TableHeaderColumn>
     </BootstrapTable>
 
 );
