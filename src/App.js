@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import List from './List';
 import AddForm from './AddForm';
-import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-import '../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
+import {InsertButton} from 'react-bootstrap-table';
 
-//var bootstrap = require('bootstrap');
 
 export default class App extends Component {
     constructor(props){
@@ -35,7 +33,11 @@ export default class App extends Component {
         return(
             <div>
                 <AddForm items = {this.state} onChange = {this.onChange} onSubmit = {this.onSubmit} />
-                <List items = {this.state.items} />
+                <span>
+                    <InsertButton onClick = {this.onSubmit} />
+                    <input value={this.state.term} onChange={this.onChange}/>
+                </span>
+                <List items = {this.state.items} onSubmit = {this.onSubmit} />
             </div>      
         );  
     }
